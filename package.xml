@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>object_tracking</name>
+    <version>0.0.1</version>
+    <description>
+        This package implemented deep_sort.
+    </description>
+    <maintainer email="asilan@uga.edu">Rui Xu</maintainer>
+    <license>BSD</license>
+
+    <url>http://ros.org/wiki/object_tracking</url>
+    <author>Rui Xu</author>
+
+    <buildtool_depend>catkin</buildtool_depend>
+	<depend>rospy</depend>
+	<depend>object_detector_msgs</depend>
+
+    <doc_depend>doxygen</doc_depend>
+</package>
