@@ -95,6 +95,10 @@ class Visualization(object):
     def run(self, frame_callback):
         self.viewer.run(lambda: self._update_fun(frame_callback))
 
+    def _update_fun(self, frame_callback):
+        frame_callback(self, self.frame_idx)
+        return True
+
     def set_image(self, image):
         self.viewer.image = image
 

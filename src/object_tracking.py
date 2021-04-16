@@ -56,7 +56,9 @@ class ObjectTracking(object):
             data.objects[i].id = new_ids[i]
         
         self.pub.publish(data)
+        self.visualizer.set_image(image.copy())
         self.visualizer.draw_objects(data.objects)
+        self.visualizer.run()
     
     def __image_callback(self, image):
         try:
