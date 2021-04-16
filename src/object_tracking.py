@@ -9,8 +9,13 @@ import numpy as np
 from deep_sort import nn_matching
 from deep_sort.detection import Detection
 from deep_sort.tracker import Tracker
+from deep_sort import visualization
+
 from object_detector_msgs.msg import ObjectArray, Object
+from sensor_msgs.msg import Image
 import rospy
+from cv_bridge import CvBridge, CvBridgeError
+
 
 
 class ObjectTracking(object):
@@ -22,7 +27,11 @@ class ObjectTracking(object):
         self.metric = nn_matching.NearestNeighborDistanceMetric("cosine", 0.2, None)
         self.tracker = Tracker(self.metric, self.max_iou_distance, self.max_age, self.n_init)
         rospy.Subscriber("image_object", ObjectArray, self.__callback)
+        self.bridge = CvBridge()
+        self.image_sub = rospy.Subscriber("image_raw", Image, self.__image_callback)
         self.pub = rospy.Publisher('image_object_tracked', ObjectArray, queue_size=10)
+        self.cv_image = None
+        self.visualizer = visualization.Visualization((960,540), update_ms=100)
 
     def __callback(self, data):
 
@@ -47,7 +56,14 @@ class ObjectTracking(object):
             data.objects[i].id = new_ids[i]
         
         self.pub.publish(data)
+        self.visualizer.draw_objects(data.objects)
     
+    def __image_callback(self, image):
+        try:
+            self.cv_image = self.bridge.imgmsg_to_cv2(image, image.encoding)
+        except CvBridgeError as e:
+            print(e)
+
 def object_tracking():
     rospy.init_node('object_tracking', anonymous=True)
     tracking = ObjectTracking(rospy.get_name())

@@ -1,0 +1,37 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/opt/ros/melodic/include/**",
+        "/home/asilan/catkin_ws/devel/include/**",
+        "/home/asilan/catkin_ws/src/object_detection/detect_object/basic_threshold/include/**",
+        "/home/asilan/catkin_ws/src/object_detection/detect_object/block_detection_demo/include/**",
+        "/home/asilan/catkin_ws/src/uas/camera_driver/camera_base/include/**",
+        "/home/asilan/catkin_ws/src/object_detection/detect_object/detect_object/include/**",
+        "/home/asilan/catkin_ws/src/MARS/navigation_module/dual_gnss/include/**",
+        "/home/asilan/catkin_ws/src/uas/camera_driver/flea3/include/**",
+        "/home/asilan/catkin_ws/src/MARS/navigation_module/gps_common/include/**",
+        "/home/asilan/catkin_ws/src/uas/image_display/include/**",
+        "/home/asilan/catkin_ws/src/MARS/control_module/robot_drive/kangaroo_driver/include/**",
+        "/home/asilan/catkin_ws/src/MARS/navigation_module/line_global_planner/include/**",
+        "/home/asilan/catkin_ws/src/MARS/navigation_module/line_local_planner/include/**",
+        "/home/asilan/catkin_ws/src/MARS/control_module/mars_battery/include/**",
+        "/home/asilan/catkin_ws/src/MARS/navigation_module/marvelmind_nav/include/**",
+        "/home/asilan/catkin_ws/src/object_detection/detect_object/object_detector_core/include/**",
+        "/home/asilan/catkin_ws/src/MARS/navigation_module/pure_pursuit_planner/include/**",
+        "/home/asilan/catkin_ws/src/uas/redege/include/**",
+        "/home/asilan/catkin_ws/src/MARS/control_module/robot_drive/robot_base/include/**",
+        "/home/asilan/catkin_ws/src/MARS/control_module/robot_drive/robot_drive/include/**",
+        "/home/asilan/catkin_ws/src/MARS/control_module/robot_drive/smartmotor_driver/include/**",
+        "/home/asilan/catkin_ws/src/uas/camera_driver/tau2/include/**",
+        "/home/asilan/catkin_ws/src/MARS/simulation_module/wheel_driver_simulation/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ]
+}
