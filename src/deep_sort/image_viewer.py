@@ -282,7 +282,7 @@ class ImageViewer(object):
         """
         self._video_writer = None
 
-    def run(self, update_fun=None):
+    def run(self):
         """Start the image viewer.
 
         This method blocks until the user requests to close the window.
@@ -294,8 +294,6 @@ class ImageViewer(object):
             to play an animation/a video sequence.
 
         """
-        if update_fun is not None:
-            self._user_fun = update_fun
 
         self._terminate, is_paused = False, False
         # print("ImageViewer is paused, press space to start.")
@@ -343,3 +341,8 @@ class ImageViewer(object):
 
         """
         self._terminate = True
+
+    def show_image(self):
+        t1 = time.time()
+        cv2.imshow(self._caption, cv2.resize(self.image, self._window_shape[:2]))
+        cv2.waitKey(self._update_ms)

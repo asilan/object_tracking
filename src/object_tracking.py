@@ -29,7 +29,8 @@ class ObjectTracking(object):
         rospy.Subscriber("image_object", ObjectArray, self.__callback)
         self.bridge = CvBridge()
         self.image_sub = rospy.Subscriber("image_raw", Image, self.__image_callback)
-        self.pub = rospy.Publisher('image_object_tracked', ObjectArray, queue_size=10)
+        self.pub = rospy.Publisher('object_tracked', ObjectArray, queue_size=10)
+        self.image_pub = rospy.Publisher("object_tracked_image",Image, queue_size=10)
         self.cv_image = None
         self.visualizer = visualization.Visualization((960,540), update_ms=100)
 
@@ -56,15 +57,21 @@ class ObjectTracking(object):
             data.objects[i].id = new_ids[i]
         
         self.pub.publish(data)
-        self.visualizer.set_image(image.copy())
+        self.visualizer.set_image(self.cv_image)
         self.visualizer.draw_objects(data.objects)
-        self.visualizer.run()
+        
+        try:
+            self.image_pub.publish(self.bridge.cv2_to_imgmsg(self.cv_image, "bgr8"))
+        except CvBridgeError as e:
+            print(e)
+
     
     def __image_callback(self, image):
         try:
             self.cv_image = self.bridge.imgmsg_to_cv2(image, image.encoding)
         except CvBridgeError as e:
             print(e)
+        print("Received an image.")
 
 def object_tracking():
     rospy.init_node('object_tracking', anonymous=True)

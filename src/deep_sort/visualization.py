@@ -92,12 +92,8 @@ class Visualization(object):
             update_ms, image_shape, "Figure 1")
         self.viewer.thickness = 2
 
-    def run(self, frame_callback):
-        self.viewer.run(lambda: self._update_fun(frame_callback))
-
-    def _update_fun(self, frame_callback):
-        frame_callback(self, self.frame_idx)
-        return True
+    def show_image(self):
+        self.viewer.show_image()
 
     def set_image(self, image):
         self.viewer.image = image
