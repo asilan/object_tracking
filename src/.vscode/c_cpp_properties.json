@@ -1,0 +1,57 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/rui/catkin_ws/devel/include",
+        "/opt/ros/melodic/include",
+        "/home/rui/catkin_ws/src/ros_astra_camera/include",
+        "/home/rui/catkin_ws/src/object_dection/detect_object/basic_threshold/include",
+        "/home/rui/catkin_ws/src/object_dection/detect_object/block_detection_demo/include",
+        "/home/rui/catkin_ws/src/uas/camera_driver/camera_base/include",
+        "/home/rui/catkin_ws/src/four_wheel_steering_tools/cmd_mux/include",
+        "/home/rui/catkin_ws/src/realsense/ddynamic_reconfigure/include",
+        "/home/rui/catkin_ws/src/object_dection/detect_object/detect_object/include",
+        "/home/rui/catkin_ws/src/Onboard-SDK-ROS/dji_sdk/include",
+        "/home/rui/catkin_ws/src/Onboard-SDK-ROS/dji_sdk_demo/include",
+        "/home/rui/catkin_ws/src/MARS/navigation_module/dual_gnss/include",
+        "/home/rui/catkin_ws/src/uas/camera_driver/flea3/include",
+        "/home/rui/catkin_ws/src/MARS/navigation_module/gps_common/include",
+        "/home/rui/catkin_ws/src/uas/image_display/include",
+        "/home/rui/catkin_ws/src/MARS/control_module/robot_drive/kangaroo_driver/include",
+        "/home/rui/catkin_ws/src/iai_kinect2/kinect2_bridge/include",
+        "/home/rui/catkin_ws/src/iai_kinect2/kinect2_calibration/include",
+        "/home/rui/catkin_ws/src/iai_kinect2/kinect2_registration/include",
+        "/home/rui/catkin_ws/src/kobuki/kobuki_auto_docking/include",
+        "/home/rui/catkin_ws/src/kobuki/kobuki_bumper2pc/include",
+        "/home/rui/catkin_ws/src/kobuki/kobuki_controller_tutorial/include",
+        "/home/rui/catkin_ws/src/kobuki/kobuki_keyop/include",
+        "/home/rui/catkin_ws/src/kobuki/kobuki_node/include",
+        "/home/rui/catkin_ws/src/kobuki/kobuki_random_walker/include",
+        "/home/rui/catkin_ws/src/kobuki/kobuki_safety_controller/include",
+        "/home/rui/catkin_ws/src/MARS/navigation_module/line_global_planner/include",
+        "/home/rui/catkin_ws/src/MARS/navigation_module/line_local_planner/include",
+        "/home/rui/catkin_ws/src/MARS/control_module/mars_battery/include",
+        "/home/rui/catkin_ws/src/MARS/navigation_module/marvelmind_nav/include",
+        "/home/rui/catkin_ws/src/MMP30_Simulation/mmp30_control/include",
+        "/home/rui/catkin_ws/src/object_dection/detect_object/object_detector_core/include",
+        "/home/rui/catkin_ws/src/realsense/realsense2_camera/include",
+        "/home/rui/catkin_ws/src/uas/redege/include",
+        "/home/rui/catkin_ws/src/MARS/control_module/robot_drive/robot_base/include",
+        "/home/rui/catkin_ws/src/MARS/control_module/robot_drive/robot_drive/include",
+        "/home/rui/catkin_ws/src/MMP30_Simulation/simple_navigation_goals/include",
+        "/home/rui/catkin_ws/src/MARS/control_module/robot_drive/smartmotor_driver/include",
+        "/home/rui/catkin_ws/src/uas/camera_driver/tau2/include",
+        "/home/rui/catkin_ws/src/object_dection/detect_object/tensorflow_object_detector/include",
+        "/home/rui/catkin_ws/src/turtlebot2i/turtlebot2i_apps/turtlebot2i_zoning_demo/include",
+        "/home/rui/catkin_ws/src/romea_controllers/urdf_vehicle_kinematic/include",
+        "/home/rui/catkin_ws/src/MARS/simulation_module/wheel_driver_simulation/include",
+        "/usr/include"
+      ],
+      "name": "Linux"
+    }
+  ]
+}

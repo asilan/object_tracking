@@ -37,7 +37,7 @@ class ObjectTracking(object):
 
         def create_detections(objects):
             detection_list = []
-            for obj in len(objects):
+            for obj in objects:
                 bbox = np.array([obj.x_offset, obj.y_offset, obj.width, obj.height])
                 confidence = obj.score
                 detection_list.append(Detection(bbox, confidence, []))
@@ -47,11 +47,11 @@ class ObjectTracking(object):
 
         # Load image and generate detections.
         detections = create_detections(data.objects)
-        
+
         # Update tracker.
         self.tracker.predict()
         new_ids = self.tracker.update(detections)
-
+        print(new_ids)
         for i in range(data.size):
             data.objects[i].id = new_ids[i]
         
