@@ -125,5 +125,4 @@ class Visualization(object):
         self.viewer.thickness = 2
         for i, obj in enumerate(objects):
             self.viewer.color = create_unique_color_uchar(obj.id)
-            rectangle(self, x, y, w, h, label=None)
             self.viewer.rectangle(obj.x_offset, obj.y_offset, obj.width, obj.height, label=str(obj.id))
