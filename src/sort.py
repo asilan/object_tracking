@@ -207,14 +207,12 @@ class Sort(object):
       self.trackers.pop(t)
     matched, unmatched_dets, unmatched_trks = associate_detections_to_trackers(dets,trks, self.iou_th)
 
-    print("matched" + str(matched))
-    print("unmatched" + str(unmatched_dets))
-    detection_id = [i for i in range(dets.shape[0])]
+    detection_id = [0 for i in range(dets.shape[0])]
     #update matched trackers with assigned detections
     for t,trk in enumerate(self.trackers):
       if(t not in unmatched_trks):
         d = matched[np.where(matched[:,1]==t)[0],0][0]
-        detection_id[d]=t
+        detection_id[d]=trk.id
         trk.update(dets[d,:])
 
     #create and initialise new trackers for unmatched detections

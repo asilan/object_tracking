@@ -78,15 +78,17 @@ class ObjectTracking(object):
                 dets.append(det)
 
             dets = np.array(dets)
-            print(dets)
             return dets
 
         dets = create_detections(data.objects, self.cv_image.shape[0], self.cv_image.shape[0])
         # update trackers based on the current detection result
         new_ids, trackers = self.mot_tracker.update(dets)
         
+        print("new_ids")
         print(new_ids)
         # update the tracker list 
+
+        print(trackers[:, 4])
         for d_index, d in enumerate(trackers[:, 4]):
             if d not in self.seedling_id_list:
                 self.seedling_id_list.append(d)
@@ -108,14 +110,13 @@ class ObjectTracking(object):
             self.image_pub.publish(self.bridge.cv2_to_imgmsg(self.cv_image, "bgr8"))
         except CvBridgeError as e:
             print(e)
-        
+        print("============================")
     def __image_callback(self, image):
         try:
             self.cv_image = self.bridge.imgmsg_to_cv2(image, image.encoding)
         except CvBridgeError as e:
             print(e)
-        print("Received an image.")
-        print(self.cv_image.shape)
+        # print("Received an image.")
 
 def object_tracking():
     rospy.init_node('object_tracking', anonymous=True)
